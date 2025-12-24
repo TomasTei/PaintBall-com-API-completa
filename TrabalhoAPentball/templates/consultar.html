@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="agendamentos-container">
+  <div class="agendamentos-box">
+    <h2>Agendamentos</h2>
+    <table class="tabela-agendamentos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Local</th>
+          <th>Serviço</th>
+          <th>Equipamentos</th>
+          <th>Jogadores</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+          {% set a = row.ag %}
+          <tr>
+            <td>{{ a.id }}</td>
+            <td>{{ a.usuario.nome if a.usuario else 'Anônimo' }}</td>
+            <td>{{ a.usuario.email if a.usuario else '-' }}</td>
+            <td>{{ a.data.strftime('%Y-%m-%d') }}</td>
+            <td>{{ a.hora.strftime('%H:%M') }}</td>
+            <td>{{ a.local_obj.nome }}</td>
+            <td>{{ a.servico.nome if a.servico else '-' }}</td>
+            <td>
+              {% if row.equipamentos %}
+                <ul>
+                {% for eq in row.equipamentos %}
+                  <li>{{ eq.nome }} x{{ eq.quantidade }}</li>
+                {% endfor %}
+                </ul>
+              {% else %}
+                -
+              {% endif %}
+            </td>
+            <td>{{ a.jogadores }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

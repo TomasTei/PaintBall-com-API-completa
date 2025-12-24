@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Paintball Zone</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <!-- Fonte e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- SDK do Google Identity -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body class="auth-body">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Paintball Zone</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index">Início</a></li>
+        <li><a href="servicos">Serviços</a></li>
+        <li><a href="sobre#sobrenos">Sobre Nós</a></li>
+        <li><a href="login" class="active">Login</a></li>
+      
+        <li id="agendamentos"></li>
+     
+        <li><a href="cadastrar">Cadastre-se</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Tela de Login -->
+  <section class="auth-container">
+    <form class="auth-box" method="POST" action="/login">
+      <h2>Login</h2>
+
+      <!-- Campo de email -->
+      <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+      
+      
+      <!-- Campo de senha -->
+      <input type="password" id="senha" name="senha" placeholder="Senha" required>
+
+      <!-- Botão de envio -->
+      <button type="button" onclick="login()">Entrar</button>
+
+      <p id="erro" class="error"></p>
+
+
+      <!-- 🔹 Div onde o Google vai renderizar o botão -->
+      <div id="googleLogin" style="margin-top: 20px;"></div>
+
+      <!-- Link para cadastro -->
+      <p>Não tem conta? <br>
+            | esqueceu a senha? <a href="cadastrar">Cadastre-se</a></p>
+    </form>
+  </section>
+
+  <!-- Script para inicializar o Login do Google -->
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Token JWT recebido:", response.credential);
+
+      // Aqui você pode enviar o token pro backend Flask
+      // usando fetch() ou axios para validar o login no servidor
+      alert("Login com Google feito com sucesso!");
+    }
+
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "SEU_CLIENT_ID_DO_GOOGLE", // coloque seu Client ID aqui
+        callback: handleCredentialResponse
+      });
+
+      google.accounts.id.renderButton(
+        document.getElementById("googleLogin"),
+        {
+          theme: "outline", // opções: "outline" ou "filled_black"
+          size: "large",   // opções: "small", "medium", "large"
+          text: "signin_with",
+          shape: "pill"    // deixa o botão mais moderno
+        }
+      );
+    };
+    fetch("/google-login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ token: response.credential })
+});
+
+  </script>
+  <!--logar como admin-->
+  <script>
+   function login() {
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const erro = document.getElementById('erro');
+
+    // Email e senha específicos
+    const emailCorreto = "admin@gmail.com";
+    const senhaCorreta = "123456";
+
+    if(email === emailCorreto && senha === senhaCorreta){
+      // Redireciona para outra página
+      const acessaAgendamentos = document.getElementById('agendamentos');
+      acessaAgendamentos.innerHTML = `<a href="agendamentos" class="active">meus agendamentos</a>`;
+      window.location.href = "loginConsultar";
+    } else {
+      erro.textContent = "Email ou senha incorretos!";
+    }
+  }
+  </script>
+ 
+</body>
+</html>

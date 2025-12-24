@@ -1,0 +1,688 @@
+/* ==========================
+   ESTILO GERAL DO SITE
+   Tema: Preto + Verde Neon
+   ========================== */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==========================
+   NAVBAR
+   ========================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 15px rgba(0, 255, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    color: #00ff66;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+}
+
+/* ==========================
+   BANNER PRINCIPAL
+   ========================== */
+.banner {
+    background: url('../img/banner.jpg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px; /* espaço pra navbar fixa */
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #00ff66;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn-banner {
+    background-color: #00ff66;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-banner:hover {
+    background-color: #00cc52;
+    box-shadow: 0 0 15px #00ff66;
+}
+
+/* ==========================
+   SEÇÃO DE SERVIÇOS
+   ========================== */
+.servicos {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   MAPA
+   ========================== */
+.mapa {
+    text-align: center;
+    padding: 60px 0;
+
+}
+
+.mapa h2 {
+    color: #00ff66;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   RODAPÉ
+   ========================== */
+footer {
+    background: #0c0c0c;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #00ff66;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social i {
+    margin: 0 10px;
+    color: #00ff66;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social i:hover {
+    color: white;
+    transform: scale(1.2);
+}
+/* ==========================
+   LOGIN / CADASTRO (TELAS AUTH)
+   ========================== */
+
+/* Fundo com imagem */
+.auth-body {
+    background: url('../img/fundo-login.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container centralizado */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Caixa com efeito vidro */
+.auth-box {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+    text-align: center;
+}
+
+/* Título */
+.auth-box h2 {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.auth-box input:focus {
+    box-shadow: 0 0 10px #00ff66;
+}
+
+/* Botão */
+.auth-box button {
+    width: 100%;
+    background-color: #00ff66;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.auth-box button:hover {
+    background-color: #00cc52;
+    box-shadow: 0 0 15px #00ff66;
+}
+
+/* Links */
+.auth-box p {
+    margin-top: 15px;
+}
+
+.auth-box a {
+    color: #00ff66;
+    text-decoration: none;
+}
+
+.auth-box a:hover {
+    text-shadow: 0 0 8px #00ff66;
+}
+
+/* Marca link ativo na navbar */
+.nav-links a.active {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+}
+/* ==========================
+   AGENDAR & AGENDAMENTOS
+   ========================== */
+
+/* Formulário de agendamento */
+.auth-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1em;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .auth-box select option {
+    background: #000;
+    color: #00ff66;
+  }
+  
+  /* Página de listagem de agendamentos */
+  .agendamentos-container {
+    background: url('../img/fundo-login.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .agendamentos-box {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+  }
+  
+  .agendamentos-box h2 {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+    margin-bottom: 20px;
+  }
+  
+  /* Tabela estilizada */
+  .tabela-agendamentos {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .tabela-agendamentos th,
+  .tabela-agendamentos td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+  }
+  
+  .tabela-agendamentos th {
+    color: #00ff66;
+    text-transform: uppercase;
+  }
+  
+  .tabela-agendamentos tr:hover {
+    background: rgba(0, 255, 0, 0.1);
+  }
+/* ==========================
+   PÁGINA DE SERVIÇOS
+   ========================== */
+
+/* Container geral da página de serviços */
+
+.servicos {
+    padding: 100px 40px;
+    text-align: center;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  /* Título principal */
+  .servicos h2 {
+    font-size: 2.8em;
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+  }
+  
+  /* Cada seção (equipamentos, espaços, armas) */
+  .secao-servicos {
+    margin-bottom: 80px;
+  }
+  
+  /* Título das seções */
+  .titulo-secao {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #00ff66;
+    text-shadow: 0 0 8px #00ff66;
+    border-bottom: 2px solid #00ff66;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Container dos cards */
+  .servicos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* Card individual */
+  .card {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+  }
+  
+  /* Imagem dos cards */
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Título e texto dos cards */
+  .card h3 {
+    color: #00ff66;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+  }
+  
+  /* Preço */
+  .card strong {
+    color: #00ff66;
+    font-size: 1.1em;
+    text-shadow: 0 0 6px #00ff66;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .servicos h2 {
+      font-size: 2em;
+    }
+  
+    .titulo-secao {
+      font-size: 1.5em;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  /* ==== RODAPÉ ==== */
+.footer {
+    background-color: #0b0c10;
+    color: #fff;
+    padding: 60px 10%;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+  }
+  
+  .footer-col {
+    flex: 1 1 200px;
+    margin: 10px 20px;
+  }
+  
+  .footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00ff66;
+    text-transform: uppercase;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .footer-col ul li a:hover {
+    color: #fff;
+  }
+  
+  /* Newsletter */
+  .newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .newsletter button {
+    padding: 10px;
+    background-color: #00ff66;
+    border: none;
+    color: #0b0c10;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .newsletter button:hover {
+    background-color: #00ff66;
+  }
+  
+  /* Parte inferior */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .social-icons i {
+    font-size: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .social-icons i:hover {
+    color: #00ff66;
+  }
+  /* ===== ESTILO DOS IFRAMES ===== */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito hover (passar o mouse em cima) */
+iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  iframe {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: 180px;
+  }
+}
+/* ==========================
+   LISTA DE USUÁRIOS (ADMIN)
+   ========================== */
+
+   .usuarios-container {
+    background: url('../img/fundo-login.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.usuarios-box {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+}
+
+.usuarios-box h2 {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* ==== Tabela ==== */
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.tabela-usuarios th {
+    text-transform: uppercase;
+    color: #00ff66;
+    font-size: 0.9em;
+}
+
+.tabela-usuarios td {
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+.tabela-usuarios tr:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* ==== Botões (caso você queira editar/deletar depois) ==== */
+.btn-editar {
+    background: #00ff66;
+    padding: 7px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background: #00cc52;
+    box-shadow: 0 0 10px #00ff66;
+}
+
+.btn-deletar {
+    background: #ff3333;
+    padding: 7px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-deletar:hover {
+    background: #cc0000;
+    box-shadow: 0 0 10px #ff3333;
+}
+
+/* ==== Responsividade ==== */
+@media (max-width: 768px) {
+    .usuarios-box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .tabela-usuarios th,
+    .tabela-usuarios td {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+}

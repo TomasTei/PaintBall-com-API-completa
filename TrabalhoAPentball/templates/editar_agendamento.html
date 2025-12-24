@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar_agendamento</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="nome" value="{{ agendamento.nome }}" required>
+        <input type="date" name="data" value="{{ agendamento.data }}" required>
+        <input type="time" name="hora" value="{{ agendamento.hora }}" required>
+        <select name="servico" required>
+          <option value="Treino" {% if agendamento.servico == 'Treino' %}selected{% endif %}>Treino</option>
+          <option value="Partida entre amigos" {% if agendamento.servico == 'Partida entre amigos' %}selected{% endif %}>Partida entre amigos</option>
+          <option value="Evento" {% if agendamento.servico == 'Evento' %}selected{% endif %}>Evento</option>
+        </select>
+        <input type="number" name="jogadores" value="{{ agendamento.jogadores }}" required>
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    
+</body>
+</html>
+  

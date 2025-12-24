@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos - Paintball Zone</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    .btn-editar {
+  color: white;
+  background-color: #4CAF50;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  gap: 10px;
+}
+
+.btn-deletar {
+  color: white;
+  background-color: #f44336;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+  </style>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-body">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Paintball Zone</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index">Início</a></li>
+        <li><a href="servicos">Serviços</a></li>
+        <li><a href="sobre#sobrenos">Sobre Nós</a></li>
+        <li><a href="agendar">Agendar</a></li>
+        <li><a href="agendamentos" class="active">Meus Agendamentos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 📋 Lista de Agendamentos -->
+  <section class="agendamentos-container">
+    <div class="agendamentos-box">
+      <h2>Meus Agendamentos</h2>
+
+      <!-- Aqui o Flask vai preencher os agendamentos -->
+      <!-- Exemplo visual temporário -->
+      <table class="tabela-agendamentos">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Serviço</th>
+            <th>Jogadores</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ag in agendamentos %}
+          <tr>
+            <td>{{ ag.nome }}</td>
+            <td>{{ ag.data.strftime('%d/%m/%Y') }}</td>
+            <td>{{ ag.hora.strftime('%H:%M') }}</td>
+            <td>{{ ag.servico }}</td>
+            <td>{{ ag.jogadores }}</td>
+          
+            <td>
+              <!-- Botões CRUD -->
+              <a href="{{ url_for('editar_agendamento', id=ag.id) }}" class="btn-editar">Editar</a>
+              <a href="{{ url_for('deletar_agendamento', id=ag.id) }}" class="btn-deletar" onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</a>
+            </td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+        
+      </table>
+    </div>
+  </section>
+</body>
+</html>
